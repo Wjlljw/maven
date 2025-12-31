@@ -1,0 +1,26 @@
+spring:
+  # 数据源配置：连接 H2 内存数据库
+  datasource:
+    url: jdbc:h2:mem:testdb
+    driver-class-name: org.h2.Driver
+    username: sa
+    password:
+
+  # H2 数据库控制台配置
+  h2:
+    console:
+      enabled: true
+
+  # JPA 配置：对象关系映射
+  jpa:
+    # 指定数据库方言：H2 数据库
+    database-platform: org.hibernate.dialect.H2Dialect
+    # Hibernate 自动建表策略：update 表示自动更新表结构
+    hibernate:
+      ddl-auto: update
+    # 是否在控制台显示 SQL 语句：方便调试
+    show-sql: true
+
+server:
+  # Web 服务器端口号
+  port: 8080
