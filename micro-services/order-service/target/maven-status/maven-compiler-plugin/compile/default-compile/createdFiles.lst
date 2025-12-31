@@ -1,0 +1,5 @@
+com\example\order\feign\StockFeignClient.class
+com\example\order\OrderApplication.class
+com\example\order\service\SettlementService.class
+com\example\order\feign\DiscountFeignClient.class
+com\example\order\controller\OrderController.class

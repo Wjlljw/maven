@@ -1,0 +1,4 @@
+com\example\stock\controller\StockController.class
+com\example\stock\repository\StockRepository.class
+com\example\stock\StockApplication.class
+com\example\stock\service\StockService.class
