@@ -1,0 +1,63 @@
+# 数据库配置
+spring:
+  datasource:
+    driver-class-name: org.h2.Driver
+    url: jdbc:h2:mem:stockdb
+    username: sa
+    password:
+
+
+  # JPA/Hibernate配置
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.H2Dialect
+        format_sql: true
+    
+  # Jackson配置
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: GMT+8
+
+
+# 日志配置
+logging:
+  level:
+    com.example.stock: DEBUG
+    org.hibernate.SQL: DEBUG
+    org.hibernate.type.descriptor.sql.BasicBinder: TRACE
+
+
+# 业务配置
+app:
+  # 库存管理配置
+  stock:
+    # 库存预警配置
+    alert:
+      # 最低库存阈值
+      min-threshold: 10
+      # 最高库存阈值
+      max-threshold: 1000
+      # 预警邮件通知列表
+      email-notify: admin@example.com,stock@example.com
+    
+    # 库存更新配置
+    update:
+      # 是否启用乐观锁
+      enable-optimistic-lock: true
+      # 并发更新等待时间(毫秒)
+      wait-time: 5000
+      # 最大重试次数
+      max-retry: 3
+    
+    # 库存查询配置
+    query:
+      # 是否启用缓存
+      enable-cache: true
+      # 缓存过期时间(秒)
+      cache-expire: 300
+      # 单次查询最大数量
+      max-query-size: 100

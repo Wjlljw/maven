@@ -1,0 +1,21 @@
+# 服务器配置（保留在本地）
+server:
+  port: 8083
+
+# 监控配置（保留在本地，用于服务健康检查）
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,env
+  endpoint:
+    health:
+      show-details: always
+    env:
+      show-values: always
+
+# 注意：
+# 1. 数据库配置已迁移到 Nacos 配置中心 (stock-service.yml)
+# 2. 应用名称和服务发现配置在 bootstrap.yml 中
+# 3. JPA 配置已迁移到 Nacos 配置中心
+# 4. 所有业务相关的配置都可以通过 Nacos 动态更新

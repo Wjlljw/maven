@@ -1,0 +1,16 @@
+spring:
+  application:
+    name: order-service
+
+  cloud:
+    nacos:
+      config:
+        enabled: true
+        server-addr: localhost:8848
+        group: DEFAULT_GROUP
+        file-extension: yaml
+
+      discovery:
+        enabled: true
+        server-addr: localhost:8848
+        group: DEFAULT_GROUP
